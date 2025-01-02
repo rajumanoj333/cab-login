@@ -52,7 +52,7 @@ public class CabLoginController {
         String password = req.getParameter("pwd");
         String email = req.getParameter("email");
         String phoneNumber = req.getParameter("phoneNumber");
-        String url = "http://localhost:8090/register/" + fullName + "/" + password + "/" + email + "/" + phoneNumber;
+        String url = "http://Cab-register:8090/register/" + fullName + "/" + password + "/" + email + "/" + phoneNumber;
         log.info(url);
         RestTemplate temp = new RestTemplate(); // REST API call
         temp.getForObject(url, String.class);
@@ -78,7 +78,7 @@ public class CabLoginController {
         int fare = distance * 2;
 
         // Construct the REST API URL for booking
-        String url = "http://localhost:8091/book/" + fullName + "/" + password + "/" + email + "/" + phoneNumber
+        String url = "http://Cab-booking:8091/book/" + fullName + "/" + password + "/" + email + "/" + phoneNumber
                      + "/" + location + "/" + destination + "/" + carType + "/" + distance;
 
         // Log the URL
